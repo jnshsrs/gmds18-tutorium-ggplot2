@@ -1,0 +1,45 @@
+group,x,y
+Linear Trend,10,8.04
+Linear Trend,8,6.95
+Linear Trend,13,7.58
+Linear Trend,9,8.81
+Linear Trend,11,8.33
+Linear Trend,14,9.96
+Linear Trend,6,7.24
+Linear Trend,4,4.26
+Linear Trend,12,10.84
+Linear Trend,7,4.82
+Linear Trend,5,5.68
+Quadratic,10,9.14
+Quadratic,8,8.14
+Quadratic,13,8.74
+Quadratic,9,8.77
+Quadratic,11,9.26
+Quadratic,14,8.1
+Quadratic,6,6.13
+Quadratic,4,3.1
+Quadratic,12,9.13
+Quadratic,7,7.26
+Quadratic,5,4.74
+Linear with influencial Outlier,10,7.46
+Linear with influencial Outlier,8,6.77
+Linear with influencial Outlier,13,12.74
+Linear with influencial Outlier,9,7.11
+Linear with influencial Outlier,11,7.81
+Linear with influencial Outlier,14,8.84
+Linear with influencial Outlier,6,6.08
+Linear with influencial Outlier,4,5.39
+Linear with influencial Outlier,12,8.15
+Linear with influencial Outlier,7,6.42
+Linear with influencial Outlier,5,5.73
+Konstant X with influencial Outlier,8,6.58
+Konstant X with influencial Outlier,8,5.76
+Konstant X with influencial Outlier,8,7.71
+Konstant X with influencial Outlier,8,8.84
+Konstant X with influencial Outlier,8,8.47
+Konstant X with influencial Outlier,8,7.04
+Konstant X with influencial Outlier,8,5.25
+Konstant X with influencial Outlier,19,12.5
+Konstant X with influencial Outlier,8,5.56
+Konstant X with influencial Outlier,8,7.91
+Konstant X with influencial Outlier,8,6.89
