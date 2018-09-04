@@ -1,7 +1,9 @@
 library(gapminder)
+library(tidyverse)
+
 
 gapminder %>% 
-  mutate(lifeExp_cat = if_else(quantile(lifeExp, probs = .9) >= lifeExp, "High Life Expectency", "Low Life Expectancy")) %>% 
+  mutate(lifeExp_cat = if_else(quantile(lifeExp, probs = .9) <= lifeExp, "Top 10 Percent", "Lower 90 Percent")) %>% 
   write_csv("data/gapminder.csv")
 
 titanic <- read_csv("~/Downloads/titanic.csv")
