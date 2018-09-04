@@ -26,21 +26,8 @@ Bitte wenden Sie sich bei Fragen an j.huesers@hs-osnabrueck.de.
 
 # Beschreibung Tutorium
 
-In diesem R Tutorial wird die Programmiersprache R vorgestellt.
-
-R ist eine beliebte Open-Source Programmiersprache die von weltweit 2 Millionen Wissenschaftlern und Statistikern zur Datenanalyse in eine Vielzahl von Fachbereichen, wie Epidemiologie, Sozialwissenschaften, Finanzwirtschaft, eingesetzt wird.
-Die Nutzung von R in Wissenschaft, Forschung und Unternehmen steigt dabei jährlich.
-
-In diesem Kurs wird gezeigt, warum Programmiersprachen zur Datenanalyse wie R im Zeitalter der Digitalisierung immer beliebter werden. 
-
-Ziel dieses Kurses ist es, den Einstieg in R zu erleichtern.
-
-Es wird gezeigt, wie gängie Datenformate wie Kommaseparierte Textdateien (CSV), Excel Spreadsheets, SPSS Dateien nach R importiert werden können und zur Datenanalyse und automatisierung genutzt werden können.
-
-Als Teilnehmer werden sie selber mit R arbeiten und nach kurzen Vorträgen durch den Dozenten selber mit R auseinandersetzten.
-
-Am Ende dieses Tutoriums können die Teilnehmer mit ihrem erworbenen Wissen die ersten eigenen Datenanalysen mit R erstellen und sind bereit ihr Wissen über R eingenständig zu erweitern.
-
-Dieser Kurs richtet sich an Einstieger und kann als Refresher für Wiedereinsteiger dienen. 
-Während des Kurses besteht genug Zeit Fragen zu stellen.
-
+ggplot2 ist eine der beliebtesten Erweiterungen für R und bieten flexible und umfangreiche Werkzeuge um publikationsfertige und hochwertige Grafiken zu erstellten.
+Dieses Tutorium vermittelt die Grundlagen von ggplot2 und zeigt den Weg von den Rohdaten hin zu individualisierten Grafiken.
+Der Kurs richtet sich an Personen, die Interesse an Datenvisualisierung haben und Vorkenntnisse in R besitzen.
+ggplot2 ist eine der beliebtesten Erweiterungen für R und bieten flexible und umfangreiche Werkzeuge um publikationsfertige und hochwertige Grafiken zu erstellten.
+Dieses Tutorium vermittelt die Grundlagen von ggplot2 und zeigt den Weg von den Rohdaten hin zu individualisierten Grafiken.
