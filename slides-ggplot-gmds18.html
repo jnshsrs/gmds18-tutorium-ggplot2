@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Visualisation in R</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Jens Hüsers" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style-slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Visualisation in R
+## with ggplot2
+### Jens Hüsers
+### 2018/17/08 (updated: 2018-10-18)
+
+---
+
+  
+
+&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"&gt;
+
+---
+
+class: center, middle
+
+# Why is visualisation important?
+
+
+
+
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-1-1.png" width="576" /&gt;
+
+---
+
+class: middle, center
+
+# Why is visualisation important?
+
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-2-1.png" width="576" /&gt;
+---
+
+class: middle, center
+
+# Why is visualisation important?
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-3-1.png" width="576" /&gt;
+
+---
+
+class: middle, center
+
+# Why is visualisation important?
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-4-1.png" width="576" /&gt;
+
+---
+
+class: middle, center
+
+# Why is visualisation important?
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-5-1.png" width="576" /&gt;
+
+---
+
+class: middle, center
+
+# Why is visualisation important?
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-6-1.png" width="576" /&gt;
+
+---
+class: center, middle
+
+  .very-large[.red[gg]plot]
+
+&lt;/br&gt;
+
+.very-large[.red[G]rammar] 
+
+.very-large[of]
+
+.very-large[.red[G]raphics]  
+
+---
+# Analogy - Written Grammar 
+
+.pull-left[
+&lt;img src="img/lazy-dog.png" width="566" style="display: block; margin: auto;" /&gt;
+]
+  
+.pull-right[
+
+- Grammar of Graphics
+
+  - Plotting **Framework**
+  
+  - Leland Wilkinson, 1999
+  
+- 2 Principles
+
+  - Graphics: Distinct layers of grammatical elements (like adjectives and nouns)
+   
+  - Meaningful plots through aesthetic mapping (Grammatical rules how to ensemble the ”vocabulary”)
+]
+
+---
+
+class: middle, center
+
+# Overview of Grammatical Elements
+
+Element | Description
+------------- | -------------
+.small-code[.code-orange[Data]]  | The dataset being plotted
+.small-code[.code-green[Aestetics]]  | The visual elements used for our data
+.small-code[.code-blue[Geometrics]]  | The scales onto which we map our data
+.small-code[Facet] | Plotting small multiples
+.small-code[Statistic] | Representations of our data to aid understanding
+.small-code[Coordinates] | The space on which the data will be plotted
+.small-code[Themes] | All non-data ink
+
+---
+
+class: middle, center
+
+.large-code[**ggplot2**]
+
+Essential grammatical elements
+
+.large-code[.code-orange[data]] .large-code[+] .large-code[.code-green[aesthetics]] .large-code[+] .large-code[.code-blue[geometrics]]
+
+Optional grammatical elements
+
+.large-code[Facet]
+
+.large-code[Statistic]
+
+.large-code[Coordinates]
+
+.large-code[Themes]
+
+
+---
+
+class: middle, center
+
+# Overview 
+
+.large-code[.code-orange[Data]] | .large-code[+]  | .large-code[.code-blue[aesthetics]] | .large-code[+] | .large-code[.code-green[geometrics]]
+------------- | ------|----------|------------|-------------------------
+.small-code[.code-orange[Dataframe with variable]] | | .small-code[.code-blue[x-Axis]] | | .small-code[.code-green[Point]]
+.small-code[.code-orange[of interest]] | | .small-code[.code-blue[y-Axis]] | | .small-code[.code-green[Line]]
+ | | .small-code[.code-blue[Color]] | | .small-code[.code-green[Histogram]]
+ | | .small-code[.code-blue[Size]] | | .small-code[.code-green[Boxplot]]
+ | | .small-code[.code-blue[Shape]] | | .small-code[.code-green[...]]
+ | | .small-code[.code-blue[Fill]] | | .small-code[.code-green[]]
+ | | .small-code[.code-blue[...]] | | .small-code[.code-green[]]
+
+---
+
+# How to speak with the Grammar of Graphics
+
+## ggplot Syntax
+
+![](img/ggplot-syntax-plain.png)
+
+---
+
+# How to speak with the Grammar of Graphics
+
+## ggplot Syntax
+
+![](img/ggplot-syntax-explained.png)
+
+---
+
+# Scatterplot
+
+
+```r
+ggplot(data = gapminder, 
+       mapping = aes(x = lifeExp, y = gdpPercap)) +
+  geom_point()
+```
+    
+.center[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-9-1.png" width="576" /&gt;
+]
+
+---
+
+# Scatterplot - adding further .code-green[aesthetics]
+
+```r
+ggplot(data = gapminder, 
+       mapping = aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  geom_point()
+```
+    
+.center[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-11-1.png" width="576" /&gt;
+]
+
+---
+
+# Scatterplot - adding further .code-green[aesthetics]
+
+```r
+ggplot(data = gapminder, 
+       mapping = aes(x = lifeExp, y = gdpPercap, color = continent, size = pop)) +
+  geom_point()
+```
+    
+.center[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-13-1.png" width="576" /&gt;
+]
+
+---
+
+# Barplots
+
+
+```r
+ggplot(data = gapminder,
+       mapping = aes(x = continent, fill = lifeExp_cat)) +
+  geom_bar() 
+```
+    
+.center[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-15-1.png" width="576" /&gt;
+]
+
+---
+
+# Boxplots
+
+
+```r
+ggplot(data = gapminder,
+       mapping = aes(x = continent, y = lifeExp)) +
+  geom_errorbar(stat = "boxplot") +
+  geom_boxplot() 
+```
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-16-1.png" width="576" /&gt;
+
+---
+
+# Histogramm und Density Plots
+
+.pull-left[
+
+```r
+gapminder %&gt;% 
+  ggplot(mapping = aes(x = lifeExp)
+  geom_histogram()
+```
+]
+
+.pull-right[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-18-1.png" width="576" /&gt;
+]
+
+---
+
+# Histogramm und Density Plots
+
+.pull-left[
+
+```r
+gapminder %&gt;% 
+  ggplot(mapping = aes(x = lifeExp, 
+*                       fill=continent)) +
+  geom_histogram() +
+*  viridis::scale_fill_viridis(discrete = T) +
+*  theme_minimal()
+```
+]
+
+.pull-right[
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-20-1.png" width="576" /&gt;
+]
+
+---
+background-image: url(img/ignaz_semmelweis_1860.jpeg)
+background-size: 200px
+background-position: 95% 30%
+
+
+# Timeline Data
+
+.pull-left-wide[
+Diese Zeitreihenanalyse basiert auf Daten von Igantz Semmelweis aus den Jahren 1841 bis 1849.
+Semmelweis beobachtete die Kindersterblichkeit in mehreren Kliniken.
+Dabei bemerkte er einen Zusammenhang zwischen den Hygiengebedingungen einzelner Kliniken und deren Mortalitätsrate Neugeborener.
+Je besser die Hygiene der Arzte war, insbesondere durch das Händewaschen vor dem Kontakt mit den Neugeborenen, desto geringer war die Mortalität.
+
+Seine Beobachtungen veröffentlichte Semmelweis in Tabellen und teilte seine Schlussfolgerungen in einem offenem Brief seinen Kollegen mit.
+Diese ignorierten jedoch seine Anweisungen. 
+
+Die Datenvisualisierung war zu dieser Zeit noch unüblich.
+Möglicherweise wären seine Beobachtungen von den Kollegen eher wahrgenommen worden, wenn diese zusammenfassend in einer Zeitreihenanalyse dargestellt worden wären.
+]
+
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-21-1.png" width="864" /&gt;
+
+---
+
+class: middle, center
+
+# Publication Ready Plots
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-22-1.png" width="576" /&gt;
+
+---
+
+class: middle, center
+
+# Publication Ready Plots
+
+&lt;img src="slides-ggplot-gmds18_files/figure-html/unnamed-chunk-23-1.png" width="432" /&gt;
+
+
+---
+
+class:  middle center
+background-image: url(../img/logo-hs-os-kompakt.jpg)
+
+
+# Kontakt 
+
+|                                                                                                            |                 |
+| :--------------------------------------------------------------------------------------------------------- | :---------------|
+| &lt;a href="mailto:j.huesers@hs-osnabrueck.de"&gt;.black[&lt;i class="fas fa-envelope"&gt;&lt;/i&gt;]   | j.huesers@hs-osnabrueck.de     |
+| &lt;a href=""&gt;.black[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;]                                           | sciphy.org                     |
+| &lt;a href=""&gt;.black[&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;]                                        | @jnshsrs                       |
+| &lt;a href="http://github.com/jnshsrs"&gt;.black[&lt;i class="fab fa-github"&gt;&lt;/i&gt;]                | @jnshsrs                       |
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

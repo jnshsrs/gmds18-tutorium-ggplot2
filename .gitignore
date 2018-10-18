@@ -58,6 +58,7 @@ pass-dw-rose.R
 
 # r-markdown
 *.html
+!slides-ggplot-gmds18.html
 proj.user
 .Rhistory
 .RData
