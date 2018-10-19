@@ -11,6 +11,12 @@ editor_options:
   chunk_output_type: inline
 ---
 
+# Preface
+
+Dieses Dokument ist das Workbook zu meinem Tutorial "Datenvisualisierung in R mit ggplot2" auf der 63. Jahrestagung der GMDS in Osnabrück am 6. September 2018.
+
+Eine begleitende Präsentation ist auf Github zu finden.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE, cache = FALSE, fig.align = 'center')
 ```

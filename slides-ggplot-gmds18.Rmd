@@ -468,7 +468,7 @@ background-image: url(../img/logo-hs-os-kompakt.jpg)
 |                                                                                                            |                 |
 | :--------------------------------------------------------------------------------------------------------- | :---------------|
 | <a href="mailto:j.huesers@hs-osnabrueck.de">.black[<i class="fas fa-envelope"></i>]   | j.huesers@hs-osnabrueck.de     |
-| <a href="">.black[<i class="fa fa-link fa-fw"></i>]                                           | sciphy.org                     |
+| <a href="">.black[<i class="fa fa-link fa-fw"></i>]                                           | sciphy-stats.com                     |
 | <a href="">.black[<i class="fab fa-twitter"></i>]                                        | @jnshsrs                       |
 | <a href="http://github.com/jnshsrs">.black[<i class="fab fa-github"></i>]                | @jnshsrs                       |
 
